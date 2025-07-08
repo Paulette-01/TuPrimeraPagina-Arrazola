@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+
+{% block title %} 
+    Pacientes
+{% endblock title %}
+
+
+{% block content_title %}
+    Creación de Paciente 
+{% endblock %} 
+
+{% block content %} 
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Crear">
+        <a href="{% url 'app:patient_list' %}"> Cancelar</a>
+        <!-- <h1>Crea Paciente</h1>
+        <label>Nombre</label><input type="text"><br>
+        <label>Apellido</label><input type="text"><br>
+        <label>Email</label><input type="text"><br>
+        <label>Edad</label><input type="number"><br>
+        <input type="submit" value="Crear"> -->
+    </form >
+
+{% endblock %} 
+ 
+

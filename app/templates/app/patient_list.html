@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+
+{% block title %} 
+    Pacientes
+{% endblock title %}
+
+
+{% block content_title %}
+    <h1>Lista de Pacientes</h1> 
+{% endblock %} 
+
+{% block content %} 
+
+    <br><br><a href="{% url 'app:patient_create' %}" class="btn btn-primary m-4">Crear Paciente</a>
+    <hr>    
+    <ul class="list-group m-4">
+
+        {% for patient in patients %}
+            
+            <div>
+                <h5 class="mb-1"> {{ patient.name }} {{ patient.last_name }}</h5><br>
+                <small> Email: {{ patient.email }} </small><br>
+                <small> Edad: {{ patient.age }} </small><br>
+            </div>
+            <hr>
+
+        {% endfor %}
+        
+    </ul>
+
+{% endblock %} 
+ 
+
